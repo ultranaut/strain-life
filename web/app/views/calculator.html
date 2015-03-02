@@ -1,0 +1,22 @@
+<div class="container">
+  <form action="#">
+
+  <!-- Form Name -->
+  <legend>Strain-life calculator</legend>
+
+  <!-- Select Material -->
+  <fieldset>
+    <label class="control-label" for="selectmaterial">Select Material</label>
+    <select class="form-control" data-ng-options="material.label for material in materials" data-ng-model="currentMaterial"/>
+  </fieldset>
+
+
+  <form class="form-horizontal">
+    <div class="input-group" data-ng-repeat="(label, value) in currentMaterial.properties">
+      <input type="text" data-ng-model="value" class="form-control">
+      <div class="input-group-addon">{{label}}</div>
+    </div>
+  </form>
+
+  </form>
+</div>
