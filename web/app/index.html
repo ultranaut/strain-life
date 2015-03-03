@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Strain-life</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
@@ -16,9 +16,6 @@
   <!-- endbuild -->
 </head>
 <body data-ng-app="strainLifeApp">
-  <!--[if lt IE 7]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
 
   <!-- Add your site or application content here -->
   <div class="header">
@@ -38,8 +35,8 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#/">Home</a></li>
             <li><a href="#/calculator">Calculator</a></li>
-            <li><a ng-href="#/about">About</a></li>
-            <li><a ng-href="#/">Contact</a></li>
+            <li><a data-ng-href="#/about">About</a></li>
+            <li><a data-ng-href="#/">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -47,7 +44,7 @@
   </div>
 
   <div class="container">
-    <div ng-view=""></div>
+    <div data-ng-view></div>
   </div>
 
   <div class="footer">
