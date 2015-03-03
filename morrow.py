@@ -17,6 +17,14 @@ materials = [
         'c':        -0.6827,
         'e_modulus': 25000
     },
+    {
+        'label': 'SAE 1141 (AIFG)',
+        'sf':        1207,
+        'b':        -0.097,
+        'ef':        0.85,
+        'c':        -0.464,
+        'e_modulus': 216
+    },
 ]
 
 def calculate(Ea, material, s_mean=None, e_error=1e-7):
