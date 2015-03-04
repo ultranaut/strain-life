@@ -23,9 +23,26 @@
       <input type="text" data-ng-model="currentMaterial.c" class="form-control" placeholder="Fatigue ductility exponent">
     </div>
     <div class="form-group">
-      <input type="text" data-ng-model="currentMaterial.eModulus" class="form-control" placeholder="Elastic modulus">
+      <input type="text" data-ng-model="currentMaterial.e_modulus" class="form-control" placeholder="Elastic modulus">
     </div>
   </fieldset>
 
-  <button type="button" class="btn btn-primary" data-ng-click="compute()">Primary</button>
+  <fieldset>
+    <h5>Conditions </h5>
+      <div class="form-group">
+        <input type="text" data-ng-model="conditions.s_mean" class="form-control" placeholder="Mean stress">
+      </div>
+      <div class="form-group">
+        <input type="text" data-ng-model="conditions.Ea" class="form-control" placeholder="Strain amplitude">
+      </div>
+  </fieldset>
+
+  <button type="button" class="btn btn-primary" data-ng-click="compute()">Calculate</button>
+
+  <fieldset>
+    <h5>Cycles</h5>
+    <div class="form-group">
+      <input type="text" data-ng-model="cycles" class="form-control" placeholder="Cycles">
+    </div>
+  </fieldset>
 </div>
