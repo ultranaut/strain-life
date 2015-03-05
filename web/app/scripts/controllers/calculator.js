@@ -9,25 +9,13 @@
  * Controller of the strainLifeApp
  */
 angular.module('strainLifeApp')
-  .controller('CalculatorCtrl', function ($scope) {
-    $scope.materials = [
-      { 'label':'Custom...',       'sf': null,        'b': null,         'ef': null,    'c': null,    'e_modulus': null     },
-      { 'label':'Ductile iron',    'sf': 209732.4442, 'b': -0.108094966, 'ef': 0.76015, 'c': -0.7126, 'e_modulus': 24800000 },
-      { 'label':'SAE 1114 (AlFG)', 'sf': 1207,        'b': -0.097,       'ef': 0.85,    'c': -0.464,   'e_modulus': 216      },
-      { 'label':'SAE 1114 (AlFG)', 'sf': 1405,        'b': -0.066,       'ef': 0.88,    'c': -0.514,   'e_modulus': 227      },
-      { 'label':'SAE 1114 (NbFG)', 'sf': 999,         'b': -0.096,       'ef': 0.76,    'c': -0.462,   'e_modulus': 220      },
-      { 'label':'SAE 1114 (NbFG)', 'sf': 1228,        'b': -0.079,       'ef': 0.77,    'c': -0.508,   'e_modulus': 217      },
-      { 'label':'SAE 1114 (VFG)',  'sf': 1087,        'b': -0.102,       'ef': 0.68,    'c': -0.529,   'e_modulus': 214      },
-      { 'label':'SAE 1114 (VFG)',  'sf': 1243,        'b': -0.086,       'ef': 0.88,    'c': -0.555,   'e_modulus': 215      },
-      { 'label':'SAE 1114 (VFG)',  'sf': 1117,        'b': -0.103,       'ef': 0.64,    'c': -0.581,   'e_modulus': 220      },
-      { 'label':'SAE 1038',        'sf': 898,         'b': -0.107,       'ef': 0.77,    'c': -0.481,   'e_modulus': 201      },
-      { 'label':'SAE 1038',        'sf': 1051,        'b': -0.098,       'ef': 0.76,    'c': -0.440,   'e_modulus': 219      },
-      { 'label':'SAE 1038',        'sf': 1197,        'b': -0.097,       'ef': 1.10,    'c': -0.460,   'e_modulus': 219      },
-      ];
-    $scope.currentMaterial = $scope.materials[1];
+  .controller('CalculatorCtrl', function ($scope, materialsData) {
+    materialsData.list(function (materials) {
+      $scope.materials = materials;
+      });
     $scope.conditions = {
-      's_mean':          40265.22776,
-      'Ea': 0.001631858
+      's_mean': 40265.22776,
+      'Ea':     0.001631858
       };
     $scope.cycles = null;
     $scope.compute = function () {
