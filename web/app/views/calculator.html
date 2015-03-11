@@ -11,29 +11,29 @@
   <fieldset>
     <h5>Material properties</h5>
     <div class="form-group">
-      <input type="text" data-ng-model="currentMaterial.sf" class="form-control" placeholder="Fatigue strength coefficient">
+      <input type="text" data-ng-model="currentMaterial.sigma_subf_prime" class="form-control" placeholder="Fatigue strength coefficient">
     </div>
     <div class="form-group">
       <input type="text" data-ng-model="currentMaterial.b" class="form-control" placeholder="Fatigue strength exponent">
     </div>
     <div class="form-group">
-      <input type="text" data-ng-model="currentMaterial.ef" class="form-control" placeholder="Fatigue ductility coefficient">
+      <input type="text" data-ng-model="currentMaterial.epsilon_subf_prime" class="form-control" placeholder="Fatigue ductility coefficient">
     </div>
     <div class="form-group">
       <input type="text" data-ng-model="currentMaterial.c" class="form-control" placeholder="Fatigue ductility exponent">
     </div>
     <div class="form-group">
-      <input type="text" data-ng-model="currentMaterial.e_modulus" class="form-control" placeholder="Elastic modulus">
+      <input type="text" data-ng-model="currentMaterial.Epsilon" class="form-control" placeholder="Elastic modulus">
     </div>
   </fieldset>
 
   <fieldset>
     <h5>Conditions </h5>
       <div class="form-group">
-        <input type="text" data-ng-model="conditions.s_mean" class="form-control" placeholder="Mean stress">
+        <input type="text" data-ng-model="conditions.sigma_subm" class="form-control" placeholder="Mean stress">
       </div>
       <div class="form-group">
-        <input type="text" data-ng-model="conditions.Ea" class="form-control" placeholder="Strain amplitude">
+        <input type="text" data-ng-model="conditions.epsilon_suba" class="form-control" placeholder="Strain amplitude">
       </div>
   </fieldset>
 
@@ -42,7 +42,7 @@
   <fieldset>
     <h5>Cycles</h5>
     <div class="form-group">
-      <input type="text" data-ng-model="cycles" class="form-control" placeholder="Cycles">
+      <input type="text" data-ng-model="Nu" class="form-control" placeholder="Cycles">
     </div>
   </fieldset>
 </div>

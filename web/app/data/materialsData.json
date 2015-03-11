@@ -1,98 +1,98 @@
 [
     {
         "label": "Custom...",
-        "sf": null,
+        "sigma_subf_prime": null,
         "b": null,
-        "ef": null,
+        "epsilon_subf_prime": null,
         "c": null,
-        "e_modulus": null
+        "Epsilon": null
     },
     {
         "label": "Ductile iron",
-        "sf": 209732.4442,
+        "sigma_subf_prime": 209732.4442,
         "b": -0.108094966,
-        "ef": 0.76015,
+        "epsilon_subf_prime": 0.76015,
         "c": -0.7126,
-        "e_modulus": 24800000
+        "Epsilon": 24800000
     },
     {
         "label": "SAE 1114 (AlFG)",
-        "sf": 1207,
+        "sigma_subf_prime": 1207,
         "b": -0.097,
-        "ef": 0.85,
+        "epsilon_subf_prime": 0.85,
         "c": -0.464,
-        "e_modulus": 216
+        "Epsilon": 216
     },
     {
         "label": "SAE 1114 (AlFG)",
-        "sf": 1405,
+        "sigma_subf_prime": 1405,
         "b": -0.066,
-        "ef": 0.88,
+        "epsilon_subf_prime": 0.88,
         "c": -0.514,
-        "e_modulus": 227
+        "Epsilon": 227
     },
     {
         "label": "SAE 1114 (NbFG)",
-        "sf": 999,
+        "sigma_subf_prime": 999,
         "b": -0.096,
-        "ef": 0.76,
+        "epsilon_subf_prime": 0.76,
         "c": -0.462,
-        "e_modulus": 220
+        "Epsilon": 220
     },
     {
         "label": "SAE 1114 (NbFG)",
-        "sf": 1228,
+        "sigma_subf_prime": 1228,
         "b": -0.079,
-        "ef": 0.77,
+        "epsilon_subf_prime": 0.77,
         "c": -0.508,
-        "e_modulus": 217
+        "Epsilon": 217
     },
     {
         "label": "SAE 1114 (VFG)",
-        "sf": 1087,
+        "sigma_subf_prime": 1087,
         "b": -0.102,
-        "ef": 0.68,
+        "epsilon_subf_prime": 0.68,
         "c": -0.529,
-        "e_modulus": 214
+        "Epsilon": 214
     },
     {
         "label": "SAE 1114 (VFG)",
-        "sf": 1243,
+        "sigma_subf_prime": 1243,
         "b": -0.086,
-        "ef": 0.88,
+        "epsilon_subf_prime": 0.88,
         "c": -0.555,
-        "e_modulus": 215
+        "Epsilon": 215
     },
     {
         "label": "SAE 1114 (VFG)",
-        "sf": 1117,
+        "sigma_subf_prime": 1117,
         "b": -0.103,
-        "ef": 0.64,
+        "epsilon_subf_prime": 0.64,
         "c": -0.581,
-        "e_modulus": 220
+        "Epsilon": 220
     },
     {
         "label": "SAE 1038",
-        "sf": 898,
+        "sigma_subf_prime": 898,
         "b": -0.107,
-        "ef": 0.77,
+        "epsilon_subf_prime": 0.77,
         "c": -0.481,
-        "e_modulus": 201
+        "Epsilon": 201
     },
     {
         "label": "SAE 1038",
-        "sf": 1051,
+        "sigma_subf_prime": 1051,
         "b": -0.098,
-        "ef": 0.76,
+        "epsilon_subf_prime": 0.76,
         "c": -0.44,
-        "e_modulus": 219
+        "Epsilon": 219
     },
     {
         "label": "SAE 1038",
-        "sf": 1197,
+        "sigma_subf_prime": 1197,
         "b": -0.097,
-        "ef": 1.1,
+        "epsilon_subf_prime": 1.1,
         "c": -0.46,
-        "e_modulus": 219
+        "Epsilon": 219
     }
 ]
