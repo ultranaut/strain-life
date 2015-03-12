@@ -5,7 +5,7 @@
  * @ngdoc function
  * @name strainLifeApp.controller:CalculatorCtrl
  * @description
- * # MainCtrl
+ * # CalculatorCtrl
  * Controller of the strainLifeApp
  */
 angular.module('strainLifeApp')
@@ -17,6 +17,17 @@ angular.module('strainLifeApp')
       'sigma_subm': 40265.22776,
       'epsilon_suba':     0.001631858
       };
+    $scope.materialProperties = {
+      'sigma_subf_prime'   : 'Fatigue strength coefficient',
+      'b'                  : 'Fatigue strength exponent',
+      'epsilon_subf_prime' : 'Fatigue ductility coefficient',
+      'c'                  : 'Fatigue ductility exponent',
+      'Epsilon'            : 'Elastic modulus',
+
+      'sigma_subm'         : 'Mean stress',
+      'epsilon_suba'       : 'Strain amplitude(?)'
+
+    };
     $scope.Nu = null;
     $scope.compute = function () {
       $scope.Nu = 0;
