@@ -10,25 +10,49 @@
  */
 angular.module('strainLifeApp')
   .controller('CalculatorCtrl', function ($scope, materialsData) {
-    materialsData.list(function (materials) {
-      $scope.materials = materials;
-      });
-    $scope.conditions = {
-      'sigma_subm': 40265.22776,
-      'epsilon_suba':     0.001631858
-      };
-    $scope.materialProperties = {
-      'sigma_subf_prime'   : 'Fatigue strength coefficient',
-      'b'                  : 'Fatigue strength exponent',
-      'epsilon_subf_prime' : 'Fatigue ductility coefficient',
-      'c'                  : 'Fatigue ductility exponent',
-      'Epsilon'            : 'Elastic modulus',
+    /*
+     * Materials data and properties
+     */
+    $scope.materials = {
+      staged: null,
+      loaded: null,
+      data: null,
 
-      'sigma_subm'         : 'Mean stress',
-      'epsilon_suba'       : 'Strain amplitude(?)'
-
+      // property => label
+      properties: {
+        sigma_subf_prime   : 'Fatigue strength coefficient',
+        b                  : 'Fatigue strength exponent',
+        epsilon_subf_prime : 'Fatigue ductility coefficient',
+        c                  : 'Fatigue ductility exponent',
+        Epsilon            : 'Elastic modulus',
+      },
     };
+
+    // fetch materials data
+    materialsData.list(function (data) {
+      $scope.materials.data = data;
+    });
+
+    /*
+     * Loading data and properties
+     */
+    $scope.loading = {
+      // current values
+      sigma_subm    : 40265.22776,
+      epsilon_suba  : 0.001631858,
+
+      // property => label
+      properties: {
+        sigma_subm   : 'Mean stress',
+        epsilon_suba : 'Strain amplitude(?)'
+      }
+    };
+
     $scope.Nu = null;
+
+    /*
+     * Calculations
+     */
     $scope.compute = function () {
       $scope.Nu = 0;
 
@@ -37,14 +61,14 @@ angular.module('strainLifeApp')
       var sf_e;
       var error_tolerance = 1e-3;
 
-      var sigma_subf_prime   = $scope.currentMaterial.sigma_subf_prime;
-      var b                  = $scope.currentMaterial.b;
-      var epsilon_subf_prime = $scope.currentMaterial.epsilon_subf_prime;
-      var c                  = $scope.currentMaterial.c;
-      var Epsilon            = $scope.currentMaterial.Epsilon;
+      var sigma_subf_prime   = $scope.materials.loaded.sigma_subf_prime;
+      var b                  = $scope.materials.loaded.b;
+      var epsilon_subf_prime = $scope.materials.loaded.epsilon_subf_prime;
+      var c                  = $scope.materials.loaded.c;
+      var Epsilon            = $scope.materials.loaded.Epsilon;
 
-      var sigma_subm         = $scope.conditions.sigma_subm;
-      var epsilon_suba       = $scope.conditions.epsilon_suba;
+      var sigma_subm         = $scope.loading.sigma_subm;
+      var epsilon_suba       = $scope.loading.epsilon_suba;
 
       if (sigma_subm !== 0) {
         sf_e = (sigma_subf_prime - sigma_subm) / Epsilon;
@@ -78,11 +102,11 @@ angular.module('strainLifeApp')
     $scope.life = function (Nu, sigma_subm) {
       sigma_subm = sigma_subm || null;
 
-      var sigma_subf_prime   = $scope.currentMaterial.sigma_subf_prime;
-      var b                  = $scope.currentMaterial.b;
-      var epsilon_subf_prime = $scope.currentMaterial.epsilon_subf_prime;
-      var c                  = $scope.currentMaterial.c;
-      var Epsilon            = $scope.currentMaterial.Epsilon;
+      var sigma_subf_prime   = $scope.materials.loaded.sigma_subf_prime;
+      var b                  = $scope.materials.loaded.b;
+      var epsilon_subf_prime = $scope.materials.loaded.epsilon_subf_prime;
+      var c                  = $scope.materials.loaded.c;
+      var Epsilon            = $scope.materials.loaded.Epsilon;
       var sf_e;
 
       if (sigma_subm !== 0) {
