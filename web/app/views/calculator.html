@@ -10,31 +10,20 @@
 
   <fieldset>
     <h5>Material properties</h5>
-    <div class="form-group">
-      <input type="text" data-ng-model="materials.loaded.sigma_subf_prime" class="form-control" placeholder="{{ materials.properties.sigma_subf_prime }}">
-    </div>
-    <div class="form-group">
-      <input type="text" data-ng-model="materials.loaded.b" class="form-control" placeholder="{{ materials.properties.b }}">
-    </div>
-    <div class="form-group">
-      <input type="text" data-ng-model="materials.loaded.epsilon_subf_prime" class="form-control" placeholder="{{ materials.properties.epsilon_subf_prime }}">
-    </div>
-    <div class="form-group">
-      <input type="text" data-ng-model="materials.loaded.c" class="form-control" placeholder="{{ materials.properties.c }}">
-    </div>
-    <div class="form-group">
-      <input type="text" data-ng-model="materials.loaded.Epsilon" class="form-control" placeholder="{{ materials.properties.Epsilon }}">
+    <div class="form-group" data-ng-repeat="prop in materials.properties">
+      <input class="form-control"
+             data-ng-model="materials.loaded[prop.notation]"
+             placeholder="{{ prop.label }}">
     </div>
   </fieldset>
 
   <fieldset>
     <h5>Loading </h5>
-      <div class="form-group">
-        <input type="text" data-ng-model="loading.sigma_subm" class="form-control" placeholder="{{ loading.properties.sigma_subm }}">
-      </div>
-      <div class="form-group">
-        <input type="text" data-ng-model="loading.epsilon_suba" class="form-control" placeholder="{{ loading.properties.epsilon_suba }}">
-      </div>
+    <div class="form-group" data-ng-repeat="prop in loading.properties">
+      <input class="form-control"
+             data-ng-model="loading[prop.notation]"
+             placeholder="{{ prop.label }}">
+    </div>
   </fieldset>
 
   <button type="button" class="btn btn-primary" data-ng-click="compute()">Calculate</button>
@@ -42,7 +31,7 @@
   <fieldset>
     <h5>Cycles</h5>
     <div class="form-group">
-      <input type="text" data-ng-model="Nu" class="form-control" placeholder="Cycles">
+      <input data-ng-model="Nu" class="form-control" placeholder="Cycles">
     </div>
   </fieldset>
 </div>

@@ -19,13 +19,13 @@ angular.module('strainLifeApp')
       data: null,
 
       // property => label
-      properties: {
-        sigma_subf_prime   : 'Fatigue strength coefficient',
-        b                  : 'Fatigue strength exponent',
-        epsilon_subf_prime : 'Fatigue ductility coefficient',
-        c                  : 'Fatigue ductility exponent',
-        Epsilon            : 'Elastic modulus',
-      },
+      properties: [
+        { notation: 'sigma_subf_prime',   label: 'Fatigue strength coefficient' },
+        { notation: 'b',                  label: 'Fatigue strength exponent' },
+        { notation: 'epsilon_subf_prime', label: 'Fatigue ductility coefficient' },
+        { notation: 'c',                  label: 'Fatigue ductility exponent' },
+        { notation: 'Epsilon',            label: 'Elastic modulus' }
+      ],
     };
 
     // fetch materials data
@@ -42,10 +42,10 @@ angular.module('strainLifeApp')
       epsilon_suba  : 0.001631858,
 
       // property => label
-      properties: {
-        sigma_subm   : 'Mean stress',
-        epsilon_suba : 'Strain amplitude(?)'
-      }
+      properties: [
+        { notation: 'sigma_subm',   label: 'Mean stress' },
+        { notation: 'epsilon_suba', label: 'Strain amplitude(?)' }
+      ]
     };
 
     $scope.Nu = null;
